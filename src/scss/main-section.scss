@@ -1,0 +1,130 @@
+.main-wrap{
+
+
+.main{
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    position: relative;
+    padding-bottom: 150px;
+    padding-left: 10%;
+    padding-right: 10%;
+    
+
+    .main-left{   
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        max-width: 600px;
+       .main-header{
+           font-size: 50pt;
+           font-weight: bold; 
+           margin-bottom: 0;
+       }
+
+       .under-title{
+        margin-top: 0;
+        max-width: 500px;
+        word-spacing: 1.5px;
+        font-size: 15pt;
+        color: #c4c4c4;
+       }
+
+       .get-started-btn{
+        margin-top: 10px;
+        background-color: hsl(180, 66%, 49%);
+        color: white;
+        border: 0;
+        height: 50px;
+        width: 175px;
+        border-radius:70px;
+        font-family: inherit;
+        font-size: 14pt;
+
+        &:active{
+            background-color: hsla(180, 66%, 49%, 0.502);
+        }
+        &:focus{
+            outline: 0;
+        }
+
+       }
+
+       
+    }
+
+    .main-right{
+        order: 2;
+        .working-illustration{
+          
+            top: -50px;
+           position: absolute;
+           right: -140px; 
+        }
+    }
+ button{
+     transition: .3s ease;
+ }
+}
+
+}
+
+@media screen and(max-width:965px){
+
+    .main{
+        margin: 0;
+        display: flex ;
+        flex-direction: column-reverse !important;
+
+        .main-left{
+             display: flex;
+             align-items: center ;
+             justify-content: center ;
+             text-align: center;
+          
+
+             .main-header{
+                font-size: 27pt !important;
+                font-weight: bold;
+                margin-bottom: 0;
+            }
+     
+            .under-title{
+             margin-top: 0;
+             width: 100%;
+             word-spacing: 1.5px;
+             font-size: 15pt;
+             color: #c4c4c4;
+            }
+        }
+
+    .main-right{
+        min-height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .working-illustration{
+            right: -160px !important;
+         max-width: 500px;
+          
+        }
+    }
+}
+}
+
+@media screen and (max-width:1222px){
+    .main-header{
+        font-size: 45pt !important;
+        font-weight: bold; 
+        margin-bottom: 0;
+    }
+
+    .under-title{
+       max-width:400px !important;
+    }
+    
+     .working-illustration{
+         
+            max-width: 600px;
+        }
+}

@@ -6,7 +6,7 @@
     flex-direction: row;
     margin-top: 100px;
     position: relative;
-    padding-bottom: 150px;
+    padding-bottom: 200px;
     padding-left: 10%;
     padding-right: 10%;
     
@@ -55,9 +55,8 @@
 
     .main-right{
         order: 2;
-        .working-illustration{
-          
-            top: -50px;
+        .working-illustration{    
+           top: -50px;
            position: absolute;
            right: -140px; 
         }

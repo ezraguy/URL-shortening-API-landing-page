@@ -1,9 +1,17 @@
-.url-section{
-    width: 78% ;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
+.url-section-wrap{
     position: relative;
+    background-color: #EFF1F7;
+    min-height: 60vh;
+
+.url-section{
+    position: absolute;
+    top: -60px;
+    width: 78% ;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    display: flex;
     align-items: center;
     min-height: 100px;
     background-color:#3A3054;
@@ -12,9 +20,8 @@
     background-repeat: no-repeat;
     background-position: top ;
     background-size: cover;
-    padding: 2.5%;
+    padding: 30px;
    
-        
         
         .url-input{
             padding-top: 10px;
@@ -59,11 +66,29 @@
 
         .err-message{
             position: absolute;
-            bottom: 17px;
+            bottom: 9px;
             font-size: 11pt;
             color: red;
             font-style: italic;
 
         }
     
+}
+
+.urls{
+    transition: .4s ease;
+    padding-top: 70px;
+    width: 78% ;
+    margin-left: auto;
+    margin-right: auto;
+    .url{
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        height: 50px;
+        background-color: white;
+        margin-bottom: 10px;
+    }
+}
 }

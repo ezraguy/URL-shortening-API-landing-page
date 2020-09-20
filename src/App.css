@@ -2,6 +2,13 @@
  
   font-family: 'Poppins', sans-serif;
   height: 100vh;
+
+  
+}
+.App button{
+ 
+    transition: .3s ease;
+
 }
 
 html,body{

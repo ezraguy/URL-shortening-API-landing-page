@@ -98,13 +98,20 @@
         }
 
     .main-right{
+
+
         height: 300px;
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: hidden;
         .working-illustration{
-            right: -160px !important;
-            max-width: 500px;
+
+             top: -100px !important;
+             right: -160px !important;
+             min-height: 50% !important;
+             max-width: 500px !important;
+             
           
         }
     }

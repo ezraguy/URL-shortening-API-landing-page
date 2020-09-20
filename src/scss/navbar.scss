@@ -1,5 +1,4 @@
 .navbar{
-    
     background-color:transparent !important ;
     padding-left:10%;
     padding-right:10%;
@@ -33,12 +32,10 @@
 @media screen and (max-width: 991px) {
 
 
-    #navbarSupportedContent{
-        position: static;
-       z-index: 10;
-    }
-
-
+    
+.navbar{
+    padding: 0;
+}
 
     .navbar-toggler{
         border: none;
@@ -53,7 +50,7 @@
         font-weight: bold;
         text-align: center;
         background-color: hsl(257, 27%, 26%);
-        width: 100%;
+        width: 100% ;
         margin-left: auto;
         margin-right: auto;
 
@@ -91,7 +88,6 @@
         border-top: .1px rgba(128, 128, 128, 0.44) solid;
         width: 90%;
         margin-top: 20px;
-       
         margin-left: auto;
         margin-right: auto;
        

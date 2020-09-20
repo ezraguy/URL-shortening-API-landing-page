@@ -18,10 +18,11 @@ const UrlSection = () => {
     return (
         <div className="url-section-wrap">
             <div className="url-section">
-                <input type="text" onChange={(e) => setUrl(e.target.value)} className={error ? "url-input error" : " url-input"} placeholder="Shorten a link here..." value={url} />
+
+                <input type="text" onChange={(e) => setUrl(e.target.value)} className={error ? "url-input error" : " url-input"} placeholder="Shorten a link here..." value={url} />  {error && <span className="err-message">Please add a link</span>}
                 <button className="shorten-btn" onClick={handleClick}>Shorten it!</button>
 
-                {error && <span className="err-message">Please add a link</span>}
+
 
 
             </div >

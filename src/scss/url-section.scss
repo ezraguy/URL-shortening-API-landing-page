@@ -5,7 +5,7 @@
 
 .url-section{
     position: absolute;
-    top: -60px;
+    top: -50px;
     width: 78% ;
     left: 0; 
     right: 0; 
@@ -30,7 +30,8 @@
             border-radius: 7px;
             border: 0;
             height: 50px;
-            width: 90% !important;
+            width: 90% ;
+            min-width: 200px ;
             
             &:focus{
                 outline: 0;
@@ -40,7 +41,7 @@
         .shorten-btn{
             height: 50px;
             width:130px;
-            border-radius: 10px;
+            border-radius: 7px;
             border: 0;
             color: white;
             background-color: hsl(180, 66%, 49%);
@@ -78,9 +79,10 @@
 .urls{
     transition: .4s ease;
     padding-top: 70px;
-    width: 78% ;
+    width: 78.1% ;
     margin-left: auto;
     margin-right: auto;
+
     .url{
         padding: 10px;
         display: flex;
@@ -88,7 +90,44 @@
         text-align: left;
         height: 50px;
         background-color: white;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
 }
+}
+
+
+@media screen and(max-width:840px){
+
+    
+    .urls{
+        padding-top: 120px !important;
+    }
+
+    .err-message{
+        top: 0;
+        align-self: flex-start;
+        padding-top: 5px;
+        padding-left: 25px;
+        position: relative !important;
+    }
+    .url-section{
+        display: flex;
+        flex-direction: column;
+        min-width: 300px;
+        padding: 20px !important;
+
+
+    }
+    .shorten-btn{
+        margin-left: 0 !important;
+        height: 50px;
+        width: 91% !important;
+        margin-top: 10px;
+        min-width: 200px;
+
+    }
+
+     
+
+
 }

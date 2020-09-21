@@ -3,6 +3,7 @@ import '../scss/url-section.scss';
 import axios from 'axios';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import 'animate.css';
+import Cards from './cards-section';
 
 const UrlSection = () => {
 
@@ -43,6 +44,7 @@ const UrlSection = () => {
             </div >
 
             <div className="urls">
+                {/* TODO: make url responsive */}
                 {urlArr.map((url, index) => {
                     return (
                         <div className="url animate__fadeInDown" key={index}>
@@ -55,6 +57,7 @@ const UrlSection = () => {
                     )
                 })}
             </div>
+            <Cards />
         </div>
     );
 }

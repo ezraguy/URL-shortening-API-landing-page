@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import '../scss/url-section.scss';
 import axios from 'axios';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-
+import 'animate.css';
 
 const UrlSection = () => {
 
@@ -20,8 +20,7 @@ const UrlSection = () => {
                 let hashId = data.data.hashid;
                 let shorten = 'https://rel.ink/' + hashId;
                 let copied = false;
-                let btnText = 'Copy'
-                let newObj = { url, hashId, shorten, copied, btnText }
+                let newObj = { url, hashId, shorten, copied }
                 setUrlArr([...urlArr, newObj]);
             })
             setUrl('');
@@ -31,7 +30,6 @@ const UrlSection = () => {
     const handleCopy = (index) => {
         let arr = [...urlArr];
         let obj = arr[index];
-        obj.btnText = 'Copied!';
         obj.copied = true;
         setUrlArr(arr)
 
@@ -47,11 +45,11 @@ const UrlSection = () => {
             <div className="urls">
                 {urlArr.map((url, index) => {
                     return (
-                        <div className="url" key={index}>
+                        <div className="url animate__fadeInDown" key={index}>
                             <span>{url.url}</span>
                             <a className="shorten" href={url.shorten}>{url.shorten}</a>
                             <CopyToClipboard text={url.shorten}>
-                                <button className={url.copied ? 'copied' : 'copy-url'} onClick={() => handleCopy(index)}>{url.btnText}</button>
+                                <button className={url.copied ? 'copied' : 'copy-url'} onClick={() => handleCopy(index)}>{url.copied ? 'Copied!' : 'Copy'}</button>
                             </CopyToClipboard>
                         </div>
                     )

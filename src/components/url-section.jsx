@@ -44,13 +44,15 @@ const UrlSection = () => {
             </div >
 
             <div className="urls">
-                {/* TODO: make url responsive */}
+
                 {urlArr.map((url, index) => {
                     return (
                         <div className="url animate__fadeInDown" key={index}>
                             <span>{url.url}</span>
+                            <div className="dropdown-divider"></div>
                             <a className="shorten" href={url.shorten}>{url.shorten}</a>
                             <CopyToClipboard text={url.shorten}>
+
                                 <button className={url.copied ? 'copied' : 'copy-url'} onClick={() => handleCopy(index)}>{url.copied ? 'Copied!' : 'Copy'}</button>
                             </CopyToClipboard>
                         </div>

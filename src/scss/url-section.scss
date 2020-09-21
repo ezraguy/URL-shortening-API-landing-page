@@ -92,6 +92,10 @@
         height: 70px;
         background-color: white;
         margin-bottom: 20px;
+
+        .drop-down-divider{
+            display: none;
+        }
     }
 
     .shorten{
@@ -114,7 +118,7 @@
         background-color:#3A3054 !important;
 
     }
- }
+  }
 }
 
 
@@ -123,6 +127,45 @@
     
     .urls{
         padding-top: 120px !important;
+        display: flex; 
+        flex-direction: column;
+        justify-content: center;
+    }
+    .url{
+        display: flex;
+        flex-direction: column;
+        width: 78%  ;
+        height: 150px !important;
+        width: 100%;
+        align-items: flex-start !important;
+        
+        span{
+            padding-left: 14px;
+
+        }
+        .dropdown-divider{
+
+
+            width: 100%;
+            border-top: rgba(128, 128, 128, 0.214) solid 1px !important;
+        }
+       
+        
+    }
+
+    .shorten{
+        padding-top: 10px;
+        padding-left: 14px ;
+        margin-left: 0 !important;
+        
+    }
+
+    .copy-url{
+        width: 96% !important;
+        height: 40px !important;
+        margin-top: auto;
+        align-self: center;
+        border-radius: 7px;
     }
 
     .err-message{
@@ -138,9 +181,8 @@
         min-width: 300px;
         top: -70px !important;
         padding: 20px !important;
-
-
     }
+
     .shorten-btn{
         margin-left: 0 !important;
         height: 50px;

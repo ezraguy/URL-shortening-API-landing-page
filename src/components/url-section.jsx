@@ -1,20 +1,33 @@
 import React, { useState } from 'react'
 import '../scss/url-section.scss';
+import axios from 'axios';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+
 
 const UrlSection = () => {
 
     const [url, setUrl] = useState('');
     const [urlArr, setUrlArr] = useState([])
     const [error, setError] = useState(false)
+
     const handleClick = () => {
-        if (url === "") {
+        let tempUrl = url.trim();
+        if (tempUrl === "") {
             setError(true)
         } else {
             setError(false)
-            setUrlArr(oldArr => [...oldArr, url]);
+            axios.post('https://rel.ink/api/links/', { "url": url }).then((data) => {
+                let hashId = data.data.hashid;
+                let shorten = 'https://rel.ink/' + hashId;
+                let newObj = { url, hashId, shorten }
+                setUrlArr([...urlArr, newObj]);
+            })
             setUrl('');
         }
     }
+
+
+
     return (
         <div className="url-section-wrap">
             <div className="url-section">
@@ -29,7 +42,13 @@ const UrlSection = () => {
             <div className="urls">
                 {urlArr.map((url, index) => {
                     return (
-                        <div className="url" key={index}>{url}</div>
+                        <div className="url" key={index}>
+                            <span>{url.url}</span>
+                            <a className="shorten" href={url.shorten}>{url.shorten}</a>
+                            <CopyToClipboard text={url.shorten}>
+                                <button className="copy-url" >Copy</button>
+                            </CopyToClipboard>
+                        </div>
                     )
                 })}
             </div>

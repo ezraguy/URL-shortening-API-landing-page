@@ -88,9 +88,24 @@
         display: flex;
         align-items: center;
         text-align: left;
-        height: 50px;
+        height: 70px;
         background-color: white;
         margin-bottom: 20px;
+    }
+
+    .shorten{
+        margin-left: auto;
+    }
+
+    .copy-url {
+        background-color: hsl(180, 66%, 49%);
+        color: white;
+        border: 0;
+        height: 50px;
+        width: 125px;
+        margin-left: 10px;
+        font-family: inherit;
+        font-size: 14pt;
     }
 }
 }
@@ -100,7 +115,7 @@
 
     
     .urls{
-        padding-top: 100px !important;
+        padding-top: 120px !important;
     }
 
     .err-message{

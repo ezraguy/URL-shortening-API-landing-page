@@ -107,7 +107,13 @@
         font-family: inherit;
         font-size: 14pt;
     }
-}
+
+    .copied{
+        @extend .copy-url;
+        background-color:#3A3054 !important;
+
+    }
+ }
 }
 
 

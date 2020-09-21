@@ -19,26 +19,31 @@ const UrlSection = () => {
             axios.post('https://rel.ink/api/links/', { "url": url }).then((data) => {
                 let hashId = data.data.hashid;
                 let shorten = 'https://rel.ink/' + hashId;
-                let newObj = { url, hashId, shorten }
+                let copied = false;
+                let btnText = 'Copy'
+                let newObj = { url, hashId, shorten, copied, btnText }
                 setUrlArr([...urlArr, newObj]);
             })
             setUrl('');
         }
     }
 
+    const handleCopy = (index) => {
+        let arr = [...urlArr];
+        let obj = arr[index];
+        obj.btnText = 'Copied!';
+        obj.copied = true;
+        setUrlArr(arr)
 
+    }
 
     return (
         <div className="url-section-wrap">
             <div className="url-section">
-
                 <input type="text" onChange={(e) => setUrl(e.target.value)} className={error ? "url-input error" : " url-input"} placeholder="Shorten a link here..." value={url} />  {error && <span className="err-message">Please add a link</span>}
                 <button className="shorten-btn" onClick={handleClick}>Shorten it!</button>
-
-
-
-
             </div >
+
             <div className="urls">
                 {urlArr.map((url, index) => {
                     return (
@@ -46,7 +51,7 @@ const UrlSection = () => {
                             <span>{url.url}</span>
                             <a className="shorten" href={url.shorten}>{url.shorten}</a>
                             <CopyToClipboard text={url.shorten}>
-                                <button className="copy-url" >Copy</button>
+                                <button className={url.copied ? 'copied' : 'copy-url'} onClick={() => handleCopy(index)}>{url.btnText}</button>
                             </CopyToClipboard>
                         </div>
                     )

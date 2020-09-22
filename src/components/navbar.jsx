@@ -7,7 +7,7 @@ const Navbar = () => {
 
 
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <a className="navbar-brand" href="#top">Shortly</a>
+                <span className="navbar-brand">Shortly</span>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -16,14 +16,14 @@ const Navbar = () => {
                     <div className="container">
                         <ul className="navbar-nav left-items">
                             <li className="nav-item">
-                                <a className="nav-link" href="#Features">Features</a>
+                                <span className="nav-link">Features</span>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#Pricing">Pricing</a>
+                                <span className="nav-link">Pricing</span>
                             </li>
 
                             <li className="nav-item">
-                                <a className="nav-link" href="#Resources">Resources</a>
+                                <span className="nav-link">Resources</span>
                                 <div className="divider"></div>
                             </li>
 
@@ -39,7 +39,7 @@ const Navbar = () => {
 
                         <ul className="navbar-nav ml-auto right-items">
                             <li className="nav-item">
-                                <a className="nav-link" href="#Login">Login</a>
+                                <span className="nav-link">Login</span>
                             </li>
                             <li className="nav-item">
 

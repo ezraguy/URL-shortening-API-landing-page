@@ -87,11 +87,12 @@
         align-items: center;
         overflow: hidden;
         .working-illustration{
-
-             top: -100px !important;
-             right: -160px !important;
-             min-height: 50% !important;
-             max-width: 500px !important;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;             
+            min-height: 50% !important;
+            max-width: 500px !important;
              
           
         }

@@ -1,7 +1,8 @@
 .App {
  
   font-family: 'Poppins', sans-serif;
-  height: 100vh;
+  overflow-x: hidden !important;
+  
 
   
 }
@@ -14,6 +15,6 @@
 }
 
 html,body{
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 

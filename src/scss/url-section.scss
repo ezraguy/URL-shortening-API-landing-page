@@ -155,7 +155,7 @@
 
     .shorten{
         font-size: 10pt;
-        padding-top: 10px;
+        padding-top: 20px;
         padding-left: 14px ;
         margin-left: 0 !important;
     }
@@ -178,6 +178,7 @@
         position: relative !important;
     }
     .url-section{
+        background-image: url(../images/bg-shorten-mobile.svg);
         display: flex;
         flex-direction: column;
         min-width: 300px;

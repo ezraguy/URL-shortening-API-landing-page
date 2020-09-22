@@ -89,7 +89,7 @@
         }
         .title-wrap{
             text-align: center;
-            margin-left: 0;
+            margin-left: 0 !important;
             .title{
                 margin-bottom: 10px;
             }
@@ -109,4 +109,14 @@
         }
     }
 
+}
+
+@media screen and (max-width:1000px){
+    .main-title{   
+        margin-right: 0px !important;
+    }
+
+    .title-wrap{
+        margin-left: 70px !important;
+    }
 }

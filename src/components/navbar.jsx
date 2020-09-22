@@ -16,14 +16,14 @@ const Navbar = () => {
                     <div className="container">
                         <ul className="navbar-nav left-items">
                             <li className="nav-item">
-                                <a className="nav-link" href="#a">Features</a>
+                                <a className="nav-link" href="#Features">Features</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#a">Pricing</a>
+                                <a className="nav-link" href="#Pricing">Pricing</a>
                             </li>
 
                             <li className="nav-item">
-                                <a className="nav-link" href="#a">Resources</a>
+                                <a className="nav-link" href="#Resources">Resources</a>
                                 <div className="divider"></div>
                             </li>
 
@@ -39,7 +39,7 @@ const Navbar = () => {
 
                         <ul className="navbar-nav ml-auto right-items">
                             <li className="nav-item">
-                                <a className="nav-link" href="#a">Login</a>
+                                <a className="nav-link" href="#Login">Login</a>
                             </li>
                             <li className="nav-item">
 

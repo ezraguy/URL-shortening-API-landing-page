@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../scss/url-section.scss';
 import axios from 'axios';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
@@ -11,6 +11,16 @@ const UrlSection = () => {
     const [urlArr, setUrlArr] = useState([])
     const [error, setError] = useState(false)
 
+
+    useEffect(() => {
+        if (localStorage.getItem('links')) {
+            let savedArr = localStorage.getItem('links');
+            savedArr = JSON.parse(savedArr);
+            setUrlArr(savedArr);
+        }
+
+    }, [])
+
     const handleClick = () => {
         let tempUrl = url.trim();
         if (tempUrl === "") {
@@ -18,11 +28,15 @@ const UrlSection = () => {
         } else {
             setError(false)
             axios.post('https://rel.ink/api/links/', { "url": url }).then((data) => {
+                let tempArr = [...urlArr]
                 let hashId = data.data.hashid;
                 let shorten = 'https://rel.ink/' + hashId;
                 let copied = false;
                 let newObj = { url, hashId, shorten, copied }
-                setUrlArr([...urlArr, newObj]);
+                tempArr.push(newObj);
+                setUrlArr(tempArr);
+                localStorage.setItem('links', JSON.stringify(tempArr));
+
             })
             setUrl('');
         }
@@ -35,6 +49,8 @@ const UrlSection = () => {
         setUrlArr(arr)
 
     }
+
+
 
     return (
         <div className="url-section-wrap">

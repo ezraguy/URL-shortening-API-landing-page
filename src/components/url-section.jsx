@@ -22,8 +22,16 @@ const UrlSection = () => {
     }, [])
 
     const handleClick = () => {
+        let reg = RegExp('^(https?:\\/\\/)?' +
+            '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' +
+            '((\\d{1,3}\\.){3}\\d{1,3}))' +
+            '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' +
+            '(\\?[;&a-z\\d%_.~+=-]*)?' +
+            '(\\#[-a-z\\d_]*)?$', 'i');
+
         let tempUrl = url.trim();
-        if (tempUrl === "") {
+
+        if (tempUrl === "" || reg.test(tempUrl) === false) {
             setError(true)
         } else {
             setError(false)
@@ -55,7 +63,7 @@ const UrlSection = () => {
     return (
         <div className="url-section-wrap">
             <div className="url-section">
-                <input type="text" aria-label="url input" onChange={(e) => setUrl(e.target.value)} className={error ? "url-input error" : " url-input"} placeholder="Shorten a link here..." value={url} />  {error && <span className="err-message">Please add a link</span>}
+                <input type="text" aria-label="url input" onChange={(e) => setUrl(e.target.value)} className={error ? "url-input error" : " url-input"} placeholder="Shorten a link here..." value={url} />  {error && <span className="err-message">Please enter a valid url</span>}
                 <button className="shorten-btn" onClick={handleClick}>Shorten it!</button>
             </div >
 

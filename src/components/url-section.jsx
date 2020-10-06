@@ -31,11 +31,11 @@ const UrlSection = () => {
 
         let tempUrl = url.trim();
 
-        if (tempUrl === "" || reg.test(tempUrl) === false) {
+        if (reg.test(tempUrl) === false) {
             setError(true)
         } else {
-            setError(false)
-            axios.post('https://rel.ink/api/links/', { "url": url }).then((data) => {
+
+            axios.post('https://rel.ink/api/links/', { "url": url },).then((data) => {
                 let tempArr = [...urlArr]
                 let hashId = data.data.hashid;
                 let shorten = 'https://rel.ink/' + hashId;
@@ -43,10 +43,13 @@ const UrlSection = () => {
                 let newObj = { url, hashId, shorten, copied }
                 tempArr.push(newObj);
                 setUrlArr(tempArr);
+                setError(false)
                 localStorage.setItem('links', JSON.stringify(tempArr));
+                setUrl('');
 
-            })
-            setUrl('');
+
+
+            }, error => setError(true))
         }
     }
 
@@ -63,7 +66,7 @@ const UrlSection = () => {
     return (
         <div className="url-section-wrap">
             <div className="url-section">
-                <input type="text" aria-label="url input" onChange={(e) => setUrl(e.target.value)} className={error ? "url-input error" : " url-input"} placeholder="Shorten a link here..." value={url} />  {error && <span className="err-message">Please enter a valid url</span>}
+                <input type="text" aria-label="url input" onChange={(e) => setUrl(e.target.value)} className={error ? "url-input error" : " url-input"} placeholder="Shorten a link here..." value={url} />  {error && <span className="err-message">Please enter a valid url (with https)</span>}
                 <button className="shorten-btn" onClick={handleClick}>Shorten it!</button>
             </div >
 

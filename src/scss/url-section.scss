@@ -21,7 +21,6 @@
     background-position: top ;
     background-size: cover;
     padding: 30px;
-   
         
         .url-input{
             padding-top: 10px;
@@ -68,7 +67,7 @@
         .err-message{
             position: absolute;
             bottom: 9px;
-            font-size: 11pt;
+            font-size: 10pt;
             color: red;
             font-style: italic;
 
@@ -78,7 +77,7 @@
 
 .urls{
     transition: .4s ease;
-    padding-top: 70px;
+    padding-top: 80px;
     width: 78.1% ;
     margin-left: auto;
     margin-right: auto;
@@ -175,6 +174,7 @@
         align-self: flex-start;
         padding-top: 5px;
         padding-left: 25px;
+        font-size: 9pt !important;
         position: relative !important;
     }
     .url-section{
